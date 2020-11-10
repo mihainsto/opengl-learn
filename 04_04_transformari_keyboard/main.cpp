@@ -32,7 +32,8 @@ GLuint
         matrScaleLocation,
         matrTranslLocation,
         matrRotlLocation,
-        codColLocation;
+        codColLocation,
+        poligonDLocation;
 
 
 glm::mat4 myMatrix, resizeMatrix, matrTransl, matrScale, matrRot;
@@ -41,7 +42,7 @@ glm::mat4 myMatrix, resizeMatrix, matrTransl, matrScale, matrRot;
 int codCol;
 float PI=3.141592, angle=0;
 float tx=0; float ty=0;
-int width=400, height=300;
+int width=1000, height=1000;
 
 void displayMatrix ( )
 {
@@ -55,61 +56,31 @@ void displayMatrix ( )
 
 };
 
-void processNormalKeys(unsigned char key, int x, int y)
-{
-
-    switch (key) {
-        case 'l' :
-            angle += 0.2f;
-            break;
-        case 'r' :
-            angle -= 0.2f;
-            break;
-
-    }
-    if (key == 27)
-        exit(0);
-}
-void processSpecialKeys(int key, int xx, int yy) {
-
-
-    switch (key) {
-        case GLUT_KEY_LEFT :
-            tx-=10;
-            break;
-        case GLUT_KEY_RIGHT :
-            tx+=10;
-            break;
-        case GLUT_KEY_UP :
-            ty+=10;
-            break;
-        case GLUT_KEY_DOWN :
-            ty-=10;
-            break;
-    }
-}
-
 void CreateVBO(void)
 {
     // varfurile
     GLfloat Vertices[] = {
-            // cele 4 varfuri din colturi
-            -390.0f, -290.0f, 0.0f, 1.0f,
-            390.0f,  -290.0f, 0.0f, 1.0f,
-            390.0f, 290.0f, 0.0f, 1.0f,
-            -390.0f, 290.0f, 0.0f, 1.0f,
-            // varfuri pentru axe
-            -400.0f, 0.0f, 0.0f, 1.0f,
-            400.0f,  0.0f, 0.0f, 1.0f,
-            0.0f, -300.0f, 0.0f, 1.0f,
-            0.0f, 300.0f, 0.0f, 1.0f,
-            // varfuri pentru dreptunghi
-            -50.0f,  -50.0f, 0.0f, 1.0f,
-            50.0f, -50.0f, 0.0f, 1.0f,
-            50.0f,  50.0f, 0.0f, 1.0f,
-            -50.0f,  50.0f, 0.0f, 1.0f,
-            // originea
-            0.0f,  0.0f, 0.0f, 1.0f,
+            // fundal
+            -1990.0f, -1990.0f, 0.0f, 1.0f,
+            1990.0f,  -1990.0f, 0.0f, 1.0f,
+            1990.0f, 1990.0f, 0.0f, 1.0f,
+            -1990.0f, 1990.0f, 0.0f, 1.0f,
+            // dreptunghi 800 x 1000
+            1000.0f,  -800.0f, 0.0f, 1.0f,
+            -1000.0f, -800.0f, 0.0f, 1.0f,
+            -1000.0f,  800.0f, 0.0f, 1.0f,
+            1000.0f,  800.0f, 0.0f, 1.0f,
+            // poligon p1 convex
+            -300.0f,  -400.0f, 0.0f, 1.0f,
+            -600.0f, -400.0f, 0.0f, 1.0f,
+            -600.0f,  0.0f, 0.0f, 1.0f,
+            -300.0f,  0.0f, 0.0f, 1.0f,
+            // poligon p2 concav
+            300.0f,  400.0f, 0.0f, 1.0f,
+            600.0f,  0.0f, 0.0f, 1.0f,
+            600.0f, 400.0f, 0.0f, 1.0f,
+            300.0f,  0.0f, 0.0f, 1.0f,
+
     };
 
 
@@ -185,8 +156,8 @@ void RenderFunction(void)
 {
 
     resizeMatrix= glm::scale(glm::mat4(1.0f), glm::vec3(1.f/width, 1.f/height, 1.0));
-    matrTransl=glm::translate(glm::mat4(1.0f), glm::vec3(tx, ty, 0.0));
-    matrRot=glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0, 0.0, 1.0));
+    // Aplicam o rotatie intre p1 si p2
+    matrRot=glm::rotate(glm::mat4(1.0f), 0.2f, glm::vec3(0.0, 0.0, 1.0));
 
     glClear(GL_COLOR_BUFFER_BIT);
     myMatrix=resizeMatrix;
@@ -197,14 +168,15 @@ void RenderFunction(void)
     glUniformMatrix4fv(myMatrixLocation, 1, GL_FALSE,  &myMatrix[0][0]);
     // desenare puncte din colturi si axe
     codCol = 0;
+    int curentIndex = 0;
     glUniform1i(codColLocation, codCol);
-    glPointSize(10.0);
-    glDrawArrays(GL_POINTS, 0, 4);
-    glDrawArrays(GL_LINES, 4, 4);
+    //Fundal
+    glDrawArrays(GL_POLYGON, curentIndex, 4);
+    curentIndex += 4;
 
     // Matricea pentru elementele care isi schimba pozitia
 
-    myMatrix=resizeMatrix * matrTransl * matrRot ;
+    myMatrix=matrRot * resizeMatrix ;
     // displayMatrix ();
 
 
@@ -213,12 +185,32 @@ void RenderFunction(void)
     glUniformMatrix4fv(myMatrixLocation, 1, GL_FALSE,  &myMatrix[0][0]);
 
     codColLocation = glGetUniformLocation(ProgramId, "codCol");
-    codCol=1;
+
+    poligonDLocation = glGetUniformLocation(ProgramId, "poligonD");
+
+    codCol=3;
     glUniform1i(codColLocation, codCol);
-    glDrawArrays(GL_POLYGON, 8, 4);
+    glUniform1i(poligonDLocation, 1);
+    // Poligon 800 1000 scalat cu shader
+    glDrawArrays(GL_POLYGON, curentIndex, 4);
+
+    glUniform1i(poligonDLocation, 0);
     codCol=2;
     glUniform1i(codColLocation, codCol);
-    glDrawArrays(GL_POINTS, 12, 1);
+    // Poligon 800 1000
+    glDrawArrays(GL_POLYGON, curentIndex, 4);
+    curentIndex += 4;
+    codCol=3;
+    glUniform1i(codColLocation, codCol);
+
+    // Poligon P1 convex
+    glDrawArrays(GL_POLYGON, curentIndex, 4);
+    curentIndex += 4;
+    codCol=1;
+    glUniform1i(codColLocation, codCol);
+    // Poligon P2 concav
+    glDrawArrays(GL_POLYGON, curentIndex, 4);
+
     glutSwapBuffers();
     glFlush ( );
 }
@@ -235,13 +227,11 @@ int main(int argc, char* argv[])
     glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB);
     glutInitWindowPosition (100,100);
     glutInitWindowSize(800,600);
-    glutCreateWindow("Compunerea transformarilor. Utilizarea tastaturii");
+    glutCreateWindow("Tema 2");
     glewInit();
     Initialize( );
     glutDisplayFunc(RenderFunction);
     glutIdleFunc(RenderFunction);
-    glutKeyboardFunc(processNormalKeys);
-    glutSpecialFunc(processSpecialKeys);
     glutCloseFunc(Cleanup);
     glutMainLoop();
 

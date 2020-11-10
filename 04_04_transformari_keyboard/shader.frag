@@ -16,5 +16,6 @@ void main(void)
     out_Color=vec4 (0.0, 0.0, 1.0, 0.0);
     if ( codCol==2 )
     out_Color=vec4 (1.0, 0.0, 0.0, 0.0);
-
+    if (codCol==3)
+    out_Color=vec4 (0.0, 1.0, 0.0, 0.0);
 }
