@@ -72,7 +72,7 @@ void processNormalKeys(unsigned char key, int x, int y)
 }
 void processSpecialKeys(int key, int xx, int yy) {
 
-
+    std::cout<<"TRANSLATE";
     switch (key) {
         case GLUT_KEY_LEFT :
             tx-=10;
@@ -181,14 +181,13 @@ void Initialize(void)
     CreateVBO();
     CreateShaders();
 }
-void RenderFunction(void)
-{
 
+void subRender1()
+{
     resizeMatrix= glm::scale(glm::mat4(1.0f), glm::vec3(1.f/width, 1.f/height, 1.0));
     matrTransl=glm::translate(glm::mat4(1.0f), glm::vec3(tx, ty, 0.0));
     matrRot=glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0, 0.0, 1.0));
 
-    glClear(GL_COLOR_BUFFER_BIT);
     myMatrix=resizeMatrix;
 
 
@@ -204,7 +203,45 @@ void RenderFunction(void)
 
     // Matricea pentru elementele care isi schimba pozitia
 
-    myMatrix=resizeMatrix * matrTransl * matrRot ;
+    myMatrix=resizeMatrix * matrTransl;
+    // displayMatrix ();
+
+
+    // matricele de scalare si de translatie
+    myMatrixLocation = glGetUniformLocation(ProgramId, "myMatrix");
+    glUniformMatrix4fv(myMatrixLocation, 1, GL_FALSE,  &myMatrix[0][0]);
+
+    codColLocation = glGetUniformLocation(ProgramId, "codCol");
+    codCol=1;
+    glUniform1i(codColLocation, codCol);
+    codCol=2;
+    glUniform1i(codColLocation, codCol);
+    glDrawArrays(GL_POINTS, 12, 1);
+//    glutSwapBuffers();
+    glFlush ( );
+}
+
+void subRender2()
+{
+    resizeMatrix= glm::scale(glm::mat4(1.0f), glm::vec3(1.f/width, 1.f/height, 1.0));
+    matrRot=glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0, 0.0, 1.0));
+
+    myMatrix=resizeMatrix;
+
+
+    // matricea de redimensionare (pentru elementele "fixe")
+    myMatrixLocation = glGetUniformLocation(ProgramId, "myMatrix");
+    glUniformMatrix4fv(myMatrixLocation, 1, GL_FALSE,  &myMatrix[0][0]);
+    // desenare puncte din colturi si axe
+    codCol = 0;
+    glUniform1i(codColLocation, codCol);
+    glPointSize(10.0);
+    glDrawArrays(GL_POINTS, 0, 4);
+    glDrawArrays(GL_LINES, 4, 4);
+
+    // Matricea pentru elementele care isi schimba pozitia
+
+    myMatrix=resizeMatrix  * matrRot ;
     // displayMatrix ();
 
 
@@ -218,9 +255,56 @@ void RenderFunction(void)
     glDrawArrays(GL_POLYGON, 8, 4);
     codCol=2;
     glUniform1i(codColLocation, codCol);
-    glDrawArrays(GL_POINTS, 12, 1);
+//    glutSwapBuffers();
+    glFlush ( );
+}
+
+void RenderFunction(void)
+{
+
+//    resizeMatrix= glm::scale(glm::mat4(1.0f), glm::vec3(1.f/width, 1.f/height, 1.0));
+//    matrTransl=glm::translate(glm::mat4(1.0f), glm::vec3(tx, ty, 0.0));
+//    matrRot=glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0, 0.0, 1.0));
+//
+//    glClear(GL_COLOR_BUFFER_BIT);
+//    myMatrix=resizeMatrix;
+//
+//
+//    // matricea de redimensionare (pentru elementele "fixe")
+//    myMatrixLocation = glGetUniformLocation(ProgramId, "myMatrix");
+//    glUniformMatrix4fv(myMatrixLocation, 1, GL_FALSE,  &myMatrix[0][0]);
+//    // desenare puncte din colturi si axe
+//    codCol = 0;
+//    glUniform1i(codColLocation, codCol);
+//    glPointSize(10.0);
+//    glDrawArrays(GL_POINTS, 0, 4);
+//    glDrawArrays(GL_LINES, 4, 4);
+//
+//    // Matricea pentru elementele care isi schimba pozitia
+//
+//    myMatrix=resizeMatrix * matrTransl * matrRot ;
+//    // displayMatrix ();
+//
+//
+//    // matricele de scalare si de translatie
+//    myMatrixLocation = glGetUniformLocation(ProgramId, "myMatrix");
+//    glUniformMatrix4fv(myMatrixLocation, 1, GL_FALSE,  &myMatrix[0][0]);
+//
+//    codColLocation = glGetUniformLocation(ProgramId, "codCol");
+//    codCol=1;
+//    glUniform1i(codColLocation, codCol);
+//    glDrawArrays(GL_POLYGON, 8, 4);
+//    codCol=2;
+//    glUniform1i(codColLocation, codCol);
+//    glDrawArrays(GL_POINTS, 12, 1);
+//    glutSwapBuffers();
+//    glFlush ( );
+    glClear(GL_COLOR_BUFFER_BIT);
+    subRender1();
+    subRender2();
     glutSwapBuffers();
     glFlush ( );
+
 }
 void Cleanup(void)
 {

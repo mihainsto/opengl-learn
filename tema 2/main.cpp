@@ -157,7 +157,7 @@ void RenderFunction(void)
 
     resizeMatrix= glm::scale(glm::mat4(1.0f), glm::vec3(1.f/width, 1.f/height, 1.0));
     // Aplicam o rotatie intre p1 si p2
-    matrRot=glm::rotate(glm::mat4(1.0f), 0.2f, glm::vec3(0.0, 0.0, 1.0));
+    matrRot=glm::rotate(glm::mat4(1.0f), -0.5f, glm::vec3(0.0, 0.0, 1.0));
 
     glClear(GL_COLOR_BUFFER_BIT);
     myMatrix=resizeMatrix;

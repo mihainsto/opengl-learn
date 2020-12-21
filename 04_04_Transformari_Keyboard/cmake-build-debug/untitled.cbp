@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug"/>
+				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug"/>
+				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug"/>
+				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="main.cpp">
-				<Option output="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/bin/main.cpp" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/bin"/>
+				<Option output="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/bin/main.cpp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.cpp"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.cpp"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="main.cpp/fast">
-				<Option output="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/bin/main.cpp" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/bin"/>
+				<Option output="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/bin/main.cpp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,26 +75,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.cpp/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.cpp/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/glm/glm/glm.hpp">
+		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/glm/glm/glm.hpp">
 			<Option target="main.cpp"/>
 		</Unit>
-		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/loadShaders.cpp">
+		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/loadShaders.cpp">
 			<Option target="main.cpp"/>
 		</Unit>
-		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/loadShaders.h">
+		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/loadShaders.h">
 			<Option target="main.cpp"/>
 		</Unit>
-		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/main.cpp">
+		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/main.cpp">
 			<Option target="main.cpp"/>
 		</Unit>
-		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_transformari_keyboard/CMakeLists.txt">
+		<Unit filename="/home/mstoian/Documents/opengl-learn/04_04_Transformari_Keyboard/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
